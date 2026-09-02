@@ -21,7 +21,7 @@ NUS MSc Civil Engineering (Transport), graduating Jan 2027 · Singapore
 
 - Coordinates, container counts and prices come from tools — the model never writes them
 - Human approval gates every high-risk action (eligibility, bid, write-to-disk)
-- **128** automated packing evaluations (16 lanes × 8 rounds; [re-run 2 Sep 2026, 128/128 PASS](https://github.com/LUOaini1213/civil-buddy/blob/main/docs/eval/fanout16x8-2026-09-02/rollup.md)); same-order comparison: LLM self-planning 29 containers vs the engine's 25
+- **128** automated packing evaluations (16 lanes × 8 rounds; [re-run 2 Sep 2026, 128/128 PASS](https://github.com/LUOaini1213/civil-buddy/blob/main/docs/eval/fanout16x8-2026-09-02/rollup.md)); shadow evaluation of the deterministic path against LLM tool-calling runs in CI
 - Policy engine and failure recovery: refuse with a reason → retry → degrade with an audit trail → cost circuit-breaker
 - Golden-path E2E 8/8 (measured at R13, needs playwright, not in CI)
 
