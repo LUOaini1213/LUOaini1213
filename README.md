@@ -44,7 +44,7 @@ A 10-agent ablation on NAVSIM (563 scenes, one metric cache, paired bootstrap CI
 
 [**vllm-sm75-throughput**](https://github.com/LUOaini1213/vllm-sm75-throughput) — a 10× vLLM throughput collapse on a GTX 1650 (sm_75, no tensor cores) traced to a cuBLAS fp16 GEMM small-M cliff: bandwidth 99.5 → 4.3 GiB/s from M=1 to M=2. The refutation experiment on a T4 — same sm_75, same Turing, tensor cores kept — shows 106.7 → 88.1 (0.83×) across three shapes. One variable differs and the ratio moves 20×; the attribution holds. Filed upstream: [pytorch#195716](https://github.com/pytorch/pytorch/issues/195716) (root cause) and [vllm#54950](https://github.com/vllm-project/vllm/issues/54950) (deployment trap, warning proposed).
 
-### TikTok TechJam 2026 — four tracks, submitted 1 Sep, results pending
+### TikTok TechJam 2026 — four tracks, submitted 1 Sep; none placed
 
 [Track 1 · Glass Box](https://github.com/LUOaini1213/track1) agent-observability middleware (span waterfalls, redaction, policy deny; official starter + my trace plane) · [Track 2 · RecAgent](https://github.com/LUOaini1213/recagent-techjam2026-track2) autonomous MLE loop, test 0.6015 vs FM 0.5946 with 0 manual edits · [Track 3 · GPU kernel](https://github.com/LUOaini1213/tiktok-techjam-2026-track3) 13/13 shapes PASS, median 2.29× on a T4 (2.07× on a P100); four of our own claims, FlashAttention among them, retracted after a self-audit · [Track 4 · ByteSize](https://github.com/LUOaini1213/track4) value-of-information stopping, +60 rank-1 at zero hit-rate loss, $0
 
