@@ -31,12 +31,12 @@ NUS MSc Civil Engineering (Transport), graduating Jan 2027 · Singapore
 
 ### [NAVSIM ability ladder](https://github.com/LUOaini1213/navsim-ability-ladder) — what caps open-loop planning
 
-A 10-agent ablation on NAVSIM (563 scenes, one metric cache, paired bootstrap CIs on every rung), then three attempts to put a learned part back in.
+An ablation on the full NAVSIM `navtest` split — 12,146 scenes, 136 logs, one metric cache, learned models trained on navtrain (103,288 scenes), three seeds per cell, paired bootstrap intervals on every gain.
 
-- Kinematics first: ConstantVelocity 0.233 → 0.580; GT boxes do not close the gap, the map does (DAC 0.737 → 0.950)
-- A learned model asked to draw the whole line scores 0.527 vs the hand rule's 0.730; let the rule draw the line and the model only pace it → 0.763
-- Regularising and training longer both lowered open-loop L1 and **lowered** the closed-loop score
-- Contamination handled by re-scoring every agent on 135 held-out scenes; effects that stop separating are reported as suggestive
+- The map is worth about seven times what ground-truth boxes are worth: +0.296 [+0.288, +0.305] against +0.040 [+0.035, +0.044]
+- Ground-truth perception is not a free input: once the model has the map, adding GT boxes is significantly negative in all three seeds (−0.044 / −0.031 / −0.047) while the open-loop loss barely moves — the training objective cannot see it
+- The learned component earns its place in the speed profile and nowhere else (+0.028 / +0.034 / +0.032 across seeds); letting it draw the path is not separable from the rule
+- **I refuted my own earlier conclusion.** On the 563-scene split a learned model given the map lost to the hand rule (0.527 vs 0.730) and I blamed inductive bias; on 12,146 scenes it reverses to 0.823 vs 0.785. The old claim was about sample size, written as if it were about the method
 
 ### GPU & systems — two controlled experiments with honest outcomes
 
@@ -46,7 +46,7 @@ A 10-agent ablation on NAVSIM (563 scenes, one metric cache, paired bootstrap CI
 
 ### TikTok TechJam 2026 — four tracks, submitted 1 Sep; none placed
 
-[Track 1 · Glass Box](https://github.com/LUOaini1213/track1) agent-observability middleware (span waterfalls, redaction, policy deny; official starter + my trace plane) · [Track 2 · RecAgent](https://github.com/LUOaini1213/recagent-techjam2026-track2) autonomous MLE loop, test 0.6015 vs FM 0.5946 with 0 manual edits · [Track 3 · GPU kernel](https://github.com/LUOaini1213/tiktok-techjam-2026-track3) 13/13 shapes PASS, median 2.29× on a T4 (2.07× on a P100); four of our own claims, FlashAttention among them, retracted after a self-audit · [Track 4 · ByteSize](https://github.com/LUOaini1213/track4) value-of-information stopping, +60 rank-1 at zero hit-rate loss, $0
+[Track 1 · Glass Box](https://github.com/LUOaini1213/track1) agent-observability middleware (span waterfalls, redaction, policy deny; official starter + my trace plane) · [Track 2 · RecAgent](https://github.com/LUOaini1213/recagent-techjam2026-track2) autonomous MLE loop, test 0.6015 vs FM 0.5946 with 0 manual edits · [Track 3 · fp16x3](https://github.com/LUOaini1213/fp16x3-transformer) 13/13 shapes PASS, median 2.83× on a T4 (2.07× on a P100) from fp32-accurate GEMMs on fp16 tensor cores; five of our own claims, FlashAttention among them, retracted after a self-audit · [Track 4 · ByteSize](https://github.com/LUOaini1213/track4) value-of-information stopping, +60 rank-1 at zero hit-rate loss, $0
 
 ### [EDA Copilot](https://github.com/LUOaini1213/eda-copilot) — flow Q&A over OpenROAD/ORFS that asks instead of guessing
 
