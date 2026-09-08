@@ -36,7 +36,8 @@ An ablation on the full NAVSIM `navtest` split — 12,146 scenes, 136 logs, one 
 - The map is worth about seven times what ground-truth boxes are worth: +0.296 [+0.288, +0.305] against +0.040 [+0.035, +0.044]
 - Ground-truth perception is not a free input: once the model has the map, adding GT boxes is significantly negative in all three seeds (−0.044 / −0.031 / −0.047) while the open-loop loss barely moves — the training objective cannot see it
 - The learned component earns its place in the speed profile and nowhere else (+0.028 / +0.034 / +0.032 across seeds); letting it draw the path is not separable from the rule
-- **I refuted my own earlier conclusion.** On the 563-scene split a learned model given the map lost to the hand rule (0.527 vs 0.730) and I blamed inductive bias; on 12,146 scenes it reverses to 0.823 vs 0.785. The old claim was about sample size, written as if it were about the method
+- The pipeline is calibrated before anything is claimed from it: on the same cache it reproduces the published baselines — ConstantVelocity 20.7 (paper 20.6), official EgoStatusMLP 65.5 / 67.4 / 66.3 (paper 66.4±0.9), Human 94.6 (paper 94.8)
+- Open-loop L1 cannot select a model: rank correlation with PDMS is −0.83 overall but −0.64 across the seven competitive runs, inverting in places (dropout 0.2 fits better and scores worse). Sample size also changes the answer, so only full-split numbers are quoted
 
 ### GPU & systems — two controlled experiments with honest outcomes
 
