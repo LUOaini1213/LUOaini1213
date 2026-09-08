@@ -62,7 +62,7 @@ Built for The WebMCP Challenge: a one-page menswear store on 9,901 real products
 
 ### [CE5212 — LLM as approver](https://github.com/LUOaini1213/ce5212-llm-coordinator) · [CE5203 — AYE weaving](https://github.com/LUOaini1213/ce5203-aye-weaving) · [malaysia-auto-ask](https://github.com/LUOaini1213/malaysia-auto-ask)
 
-Rules propose, the model only says yes/no — course log **43/44**, and a synchronous call cost Bus 95 +2.2 min · YOLOv11 counts + SUMO ramp metering, peak network time loss **−22.7%** · ask-data demo that stops when the metric is ambiguous — 30 questions: 22 correct, 8 correctly refused
+Rules propose, the model only says yes/no — course log **137 of 180 ticks (76%) never called it**, the 43 that did were all approved with 0 vetoes, and a synchronous call cost Bus 95 +2.2 min · YOLOv11 counts + SUMO ramp metering, peak network time loss **−22.7%** · ask-data demo that stops when the metric is ambiguous — 30 questions: 22 correct, 8 correctly refused
 
 ---
 
