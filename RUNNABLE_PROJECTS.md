@@ -17,7 +17,7 @@ project virtual environment; Node projects use the version in `package.json`.
 | [LP/MIP from scratch](https://github.com/LUOaini1213/lp-mip-from-scratch) | `python -m unittest discover -s tests -v`, then `python bench/bench_all.py --check` | 29 tests and committed benchmark checks. Install the documented SciPy/HiGHS reference dependency. |
 | [Campus bus routing](https://github.com/LUOaini1213/campus-bus-routing) | `python -m unittest discover -s tests -v` | 37 routing, HTTP and numerical checks. A synthetic September 2026 rebuild; the unarchived 2024 source data is not recreated. |
 | [Counterask WebMCP](https://github.com/LUOaini1213/counterask-webmcp) | `npm test`, then `npm run smoke` | Parser and fuzz checks, tool calls and a small catalog benchmark. [Browser demo](https://luoaini1213.github.io/counterask-webmcp/). Native `document.modelContext` interaction needs a supporting browser with WebMCP enabled. |
-| [ByteSize / Track 4](https://github.com/LUOaini1213/track4) | `python -m unittest discover -s tests -v` | Offline shopping-agent tests. See README for the small fixture demo and full frozen-catalog setup; MiniLM weights are needed to match the recorded scoring configuration. |
+| [ByteSize / Track 4](https://github.com/LUOaini1213/track4) | `python -S demo/fixture.py`; `python -S -m unittest discover -s tests -v` | Original two-product dialogue demo and 145 offline tests (one staged-ZIP check skips). Import an existing frozen catalog with the checksum verifier for full scoring; MiniLM weights are needed to match its recorded configuration. |
 | [RepostGuard](https://github.com/LUOaini1213/tiktok-techjam-2026-track5) | `python infer.py --input_dir samples --output preds.json` | Per-image probabilities using the shipped head and downloaded frozen encoders. Install the pinned scikit-learn and NumPy 2 dependencies first. CPU works; the full SID-Set training/evaluation pipeline is separate. |
 
 ## Recompute recorded research results
@@ -41,7 +41,10 @@ project virtual environment; Node projects use the version in `package.json`.
   Private course, job-application and backup repositories are not public demo dependencies.
 
 Local verification during this pass covered real workflow execution for Civil Buddy,
-Track 1, EDA, Malaysia, CE5203, CE5212, LP/MIP, bus routing and Counterask; NAVSIM
-report regeneration and RecAgent prediction recombination were also rerun.
+Track 1, EDA, Malaysia, CE5203, CE5212, LP/MIP, bus routing and Counterask; Track 4
+also completed all 200 public sessions on the original 50,000-product catalog
+using the zero-token standard-library path. RepostGuard passed 50 tests (two
+dataset checks skipped) and real two-image inference with the shipped head.
+NAVSIM report regeneration and RecAgent prediction recombination were also rerun.
 Each repository's Actions history gives the exact commit and CI scope. A green
 CPU test job does not assert that a full GPU experiment or live model call ran.
