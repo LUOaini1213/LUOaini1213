@@ -5,9 +5,11 @@ NUS MSc Civil Engineering (Transport), graduating Jan 2027 · Singapore
 
 交通工程出身，做 Agent 产品和评测。一句话主张：**硬数字交给确定性工具，模型只做它擅长的部分，高风险动作必须有人点头——而判断模型放没放对位置，只能看闭环，不能看损失。**
 
-[Site](https://luoaini1213.github.io) · [English](https://luoaini1213.github.io/en.html) · e1576499@u.nus.edu · wenjiluo7@gmail.com
+[Site](https://luoaini1213.github.io) · [English](https://luoaini1213.github.io/en.html) · [Six-role CV library / 六赛道简历](https://luoaini1213.github.io/resumes/) · e1576499@u.nus.edu · wenjiluo7@gmail.com
 
-*8 weeks, 200+ commits, 4 releases: everything below was built between July and September 2026.*
+[Run the projects / 运行命令与依赖](RUNNABLE_PROJECTS.md) — local demos, reproducible reports and full-experiment requirements.
+
+*Selected engineering and AI projects, with runnable demos and dated experiment records.*
 
 ---
 
@@ -21,7 +23,7 @@ NUS MSc Civil Engineering (Transport), graduating Jan 2027 · Singapore
 
 - Coordinates, container counts and prices come from tools — the model never writes them
 - Human approval gates every high-risk action (eligibility, bid, write-to-disk)
-- **128** automated packing evaluations (16 lanes × 8 rounds; [re-run 2 Sep 2026, 128/128 PASS](https://github.com/LUOaini1213/civil-buddy/blob/main/docs/eval/fanout16x8-2026-09-02/rollup.md)); shadow evaluation of the deterministic path against LLM tool-calling runs in CI
+- **128** deterministic packing evaluations (16 lanes × 8 rounds; [recorded 128/128 PASS](https://github.com/LUOaini1213/civil-buddy/blob/main/docs/eval/fanout16x8-2026-09-02/rollup.md)); CI runs a 2×1 offline slice. Separate steps / llm_toolcall shadow evaluation uses `policy_fallback` when no model key is configured
 - Policy engine and failure recovery: refuse with a reason → retry → degrade with an audit trail → cost circuit-breaker
 - Golden-path E2E 8/8 (measured at R13, needs playwright, not in CI)
 
@@ -51,7 +53,7 @@ An ablation on the full NAVSIM `navtest` split — 12,146 scenes, 136 logs, one 
 
 ### [EDA Copilot](https://github.com/LUOaini1213/eda-copilot) — flow Q&A over OpenROAD/ORFS that asks instead of guessing
 
-Ran the full RTL→GDSII flow myself (ORFS official image, nangate45/gcd) and turned the 46 reports/logs plus 31 script docs into a 1,215-chunk corpus with line-level provenance. Seven structured stop codes (ambiguous metric, setup/hold unspecified, out of scope, …): **12/12** should-stop questions stop with the right code; with the guard off all 12 are answered anyway, each with a citation — a cited wrong answer is the dangerous kind. Hybrid retrieval was switched off, then back on when run artifacts made the corpus heterogeneous (Hit@5 0.957 vs 0.913); both numbers stay in the README. Reading my own QoR report: TNS −7.18 vs WNS −0.16 (violations spread over many paths), timing buffers at 18.7% of standard-cell area with WNS still unconverged. Example-scale design, open 45 nm library, default parameters — not fab yield data.
+Ran the full RTL→GDSII flow myself (ORFS official image, nangate45/gcd) and turned the 46 reports/logs plus 31 script docs into a 1,215-chunk corpus with line-level provenance. Seven structured stop codes (ambiguous metric, setup/hold unspecified, out of scope, …): **12/12** should-stop questions stop with the right code; with the guard off all 12 are answered anyway, each with a citation — a cited wrong answer is the dangerous kind. After the zero-relevance fusion fix, BM25 and hybrid both reach Hit@5 22/23 (0.957) on the 23-question set; versioned earlier results remain in the README. Wrong-platform, wrong-run and unrelated-question regressions now exercise the refusal boundary. Reading my own QoR report: TNS −7.18 vs WNS −0.16 (violations spread over many paths), timing buffers at 18.7% of standard-cell area with WNS still unconverged. Example-scale design, open 45 nm library, default parameters — not fab yield data.
 
 ### [Counterask](https://github.com/LUOaini1213/counterask-webmcp) — a storefront whose tools ask back · [live](https://luoaini1213.github.io/counterask-webmcp/)
 
@@ -75,7 +77,7 @@ Time-dependent shortest path on a 23-node / 58-edge graph, with four solvers (he
 
 ### [CE5212 — LLM as approver](https://github.com/LUOaini1213/ce5212-llm-coordinator) · [CE5203 — AYE weaving](https://github.com/LUOaini1213/ce5203-aye-weaving) · [malaysia-auto-ask](https://github.com/LUOaini1213/malaysia-auto-ask)
 
-Rules propose, the model only says yes/no — course log **137 of 180 ticks (76%) never called it**, the 43 that did were all approved with 0 vetoes, and a synchronous call cost Bus 95 +2.2 min · YOLOv11 counts + SUMO ramp metering, peak network time loss **−22.7%** · ask-data demo that stops when the metric is ambiguous — 30 questions: 22 correct, 8 correctly refused
+Rules propose, the model only says yes/no — course log **137 of 180 ticks (76%) never called it**, the 43 that did were all approved with 0 vetoes, and a synchronous call cost Bus 95 +2.2 min · YOLOv11 counts + SUMO ramp metering; **−22.7%** peak network time loss in the original course report, with the recovered controller and a separately reported 12-scenario rerun now in the repository · ask-data demo that stops when the metric is ambiguous — 30 questions: 22 correct, 8 correctly refused
 
 ---
 
