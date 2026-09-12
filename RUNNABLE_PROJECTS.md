@@ -37,7 +37,7 @@ project virtual environment; Node projects use the version in `package.json`.
 - `counterask-webmcp` is the selected storefront; the sibling `counterask` repository
   contains the independent teammate rewrite and branch history.
 - This profile and the [personal site](https://luoaini1213.github.io/) provide the
-  navigation and [six-role CV library](https://luoaini1213.github.io/resumes/).
+  navigation and [seven-role CV library](https://luoaini1213.github.io/resumes/).
   Private course, job-application and backup repositories are not public demo dependencies.
 
 Local verification during this pass covered real workflow execution for Civil Buddy,

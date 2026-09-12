@@ -5,7 +5,7 @@ NUS MSc Civil Engineering (Transport), graduating Jan 2027 · Singapore
 
 交通工程出身，做 Agent 产品和评测。一句话主张：**硬数字交给确定性工具，模型只做它擅长的部分，高风险动作必须有人点头——而判断模型放没放对位置，只能看闭环，不能看损失。**
 
-[Site](https://luoaini1213.github.io) · [English](https://luoaini1213.github.io/en.html) · [Six-role CV library / 六赛道简历](https://luoaini1213.github.io/resumes/) · e1576499@u.nus.edu · wenjiluo7@gmail.com
+[Site](https://luoaini1213.github.io) · [English](https://luoaini1213.github.io/en.html) · [Seven-role CV library / 七赛道简历](https://luoaini1213.github.io/resumes/) · e1576499@u.nus.edu · wenjiluo7@gmail.com
 
 [Run the projects / 运行命令与依赖](RUNNABLE_PROJECTS.md) — local demos, reproducible reports and full-experiment requirements.
 
@@ -73,7 +73,7 @@ Time-dependent shortest path on a 23-node / 58-edge graph, with four solvers (he
 
 ### [CE5001 — flood-resilient bus network](https://luoaini1213.github.io/#proj-ce5001) — evaluation / research
 
-200 paired experiments, rule agents vs LLM agents on flooded multimodal networks (DEM + SUMO; 793 services, 5,201 stops). Dense CBD: rule agents cut related travel time **62.2%**. [Report PDF](https://luoaini1213.github.io/files/CE5001_report.pdf)
+200 simulation runs with paired seeds, rule agents vs LLM agents on flooded multimodal networks (DEM + SUMO; 793 service-direction pairs, 5,201 stops). Marina (H=2.5 m, GPS-off): the rule policy reduced mean resilience-loss area (RTA) **62.2%** versus no rerouting. [Report PDF](https://luoaini1213.github.io/files/CE5001_report.pdf)
 
 ### [CE5212 — LLM as approver](https://github.com/LUOaini1213/ce5212-llm-coordinator) · [CE5203 — AYE weaving](https://github.com/LUOaini1213/ce5203-aye-weaving) · [malaysia-auto-ask](https://github.com/LUOaini1213/malaysia-auto-ask)
 
