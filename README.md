@@ -13,6 +13,7 @@ Dated write-ups: [PROJECTS.md](PROJECTS.md) · commands and dependencies: [RUNNA
 
 | | |
 |---|---|
+| [Manufacturing Planning Agent](https://github.com/LUOaini1213/manufacturing-planning-agent) | Capacity allocation and downtime replan. HiGHS solves, SimPy checks, and the agent is not credited with the solver. |
 | [Civil Buddy](https://github.com/LUOaini1213/civil-buddy) | Engineering workbench. Packing is the one measured engine; the other roles are SOPs. |
 | [NAVSIM ability ladder](https://github.com/LUOaini1213/navsim-ability-ladder) | Full-split ablation of what caps open-loop planning, with paired bootstrap intervals. |
 | [vLLM sm_75 throughput](https://github.com/LUOaini1213/vllm-sm75-throughput) | A 10× throughput collapse traced to an fp16 GEMM cliff, plus the experiment that would refute it. |
