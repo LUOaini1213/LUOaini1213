@@ -19,7 +19,7 @@ repository-specific setup before running these commands.
 | [Driving-scene 3DGS](https://github.com/LUOaini1213/driving-3dgs) | [Actual interactive scene](https://luoaini1213.github.io/driving-3dgs/) — load, move, reset and return to preview | Follow the [source-pinned viewer build](https://github.com/LUOaini1213/driving-3dgs/blob/6a584b45579c333e1d2461ff4d64ff15b056e775/docs/PUBLIC_VIEWER.md). Reuses the archived scene; no retraining or new browser quality measurement. |
 
 Manufacturing and IFC demo commands require their documented Python dependencies.
-Use the source-pinned [manufacturing browser guide](https://github.com/LUOaini1213/manufacturing-planning-agent/blob/0db8f89b02262031a358686c43fcf7fc25995c03/docs/BROWSER_DEMO.md)
+Use the source-pinned [manufacturing browser guide](https://github.com/LUOaini1213/manufacturing-planning-agent/blob/b00721143d88b61f98894f853626fee0ba572676/docs/BROWSER_DEMO.md)
 and [IFC report review guide](https://github.com/LUOaini1213/ifcsg-precheck/blob/fd48ad5664be8903442a1b70db917a7059830999/docs/REPORT_REVIEW.md)
 for the exact setup and interpretation of these examples.
 The 3D viewer needs WebGL 2 and WebAssembly; layout checks do not establish phone
