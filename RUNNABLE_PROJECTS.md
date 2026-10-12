@@ -5,6 +5,26 @@ retain their September 2026 verification scope. Start from each linked repositor
 then run the command below from that repository root. Commands use the activated
 project virtual environment; Node projects use the version in `package.json`.
 
+## October 12 engineering demonstrations
+
+These new entrances have a separate October 12 scope; they do not rewrite the
+September experiments or claim new model or industrial performance. Start with
+the [bilingual cases](https://luoaini1213.github.io/cases/en.html), then use the
+repository-specific setup before running these commands.
+
+| Project | Public entrance | Actual local reproduction |
+|---|---|---|
+| [Manufacturing planning](https://github.com/LUOaini1213/manufacturing-planning-agent) | [Recorded five-step replay](https://luoaini1213.github.io/manufacturing-planning-agent/) — saved HiGHS/SimPy computations, no hosted Python solver | `python -m mpa.demo --port 8840` — edit an outage, compare, explicitly confirm and advance, introduce another event, export the exact trace. No API key or shop-floor connection. |
+| [IFC review](https://github.com/LUOaini1213/ifcsg-precheck) | [Authored three-slab report workflow](https://luoaini1213.github.io/ifcsg-precheck/) — illustrative rules, filters and JSON/CSV downloads; no visitor-file processing | `python scripts/report_demo.py --output-dir demos/report-review`, then `python scripts/report_demo.py --check`. Real check/enrich/check and independent typed STEP readback; official workbook and private models are not included. |
+| [Driving-scene 3DGS](https://github.com/LUOaini1213/driving-3dgs) | [Actual interactive scene](https://luoaini1213.github.io/driving-3dgs/) — load, move, reset and return to preview | Follow the [source-pinned viewer build](https://github.com/LUOaini1213/driving-3dgs/blob/6a584b45579c333e1d2461ff4d64ff15b056e775/docs/PUBLIC_VIEWER.md). Reuses the archived scene; no retraining or new browser quality measurement. |
+
+Manufacturing and IFC demo commands require their documented Python dependencies.
+Use the source-pinned [manufacturing browser guide](https://github.com/LUOaini1213/manufacturing-planning-agent/blob/0db8f89b02262031a358686c43fcf7fc25995c03/docs/BROWSER_DEMO.md)
+and [IFC report review guide](https://github.com/LUOaini1213/ifcsg-precheck/blob/fd48ad5664be8903442a1b70db917a7059830999/docs/REPORT_REVIEW.md)
+for the exact setup and interpretation of these examples.
+The 3D viewer needs WebGL 2 and WebAssembly; layout checks do not establish phone
+frame rate or memory usage. Every case retains its input and interpretation limits.
+
 ## Try locally
 
 | Project | Entry point | What it produces / prerequisites |
