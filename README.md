@@ -9,6 +9,8 @@ Hard numbers stay in deterministic tools. The model only drafts. High-risk actio
 
 Dated write-ups: [PROJECTS.md](PROJECTS.md) · commands and dependencies: [RUNNABLE_PROJECTS.md](RUNNABLE_PROJECTS.md)
 
+[Three engineering cases](https://luoaini1213.github.io/cases/en.html): manufacturing outage → comparison → confirmed continuation, IFC type/unit → enrichment → independent readback, and driving-scene reconstruction → browser exploration. Each case links its demonstration, implementation and limits. [中文版](https://luoaini1213.github.io/cases/).
+
 ## Selected
 
 | Project | What to inspect | Demo or evidence |
@@ -16,7 +18,7 @@ Dated write-ups: [PROJECTS.md](PROJECTS.md) · commands and dependencies: [RUNNA
 | [Glass Box / Track 1](https://github.com/LUOaini1213/track1) | Agent span waterfalls, redaction and durable OTLP delivery with explicit failure states. Official starter plus my observability layer; single-user PoC. | [No-key replay demo](https://github.com/LUOaini1213/track1#try-the-trace-ui-without-an-api-key) · [Recovery and overhead record](https://github.com/LUOaini1213/track1/blob/7d3b02dab693de2d6b45ced69ac9b4c04eaaab4d/docs/OTLP_DELIVERY.md) |
 | [fp16x3 Transformer](https://github.com/LUOaini1213/fp16x3-transformer) | Compensated FP16 GEMMs with FP32 input/output and precision checks. Recorded T4 performance gates include retained failures. | [Measured results and limits](https://github.com/LUOaini1213/fp16x3-transformer/blob/0936d91bc38752aecd9e066287d8f4c47652dee7/README.md#what-the-measurements-support) · [Run and audit](RUNNABLE_PROJECTS.md#recompute-recorded-research-results) |
 | [LLM judge experiments](https://github.com/LUOaini1213/llm-eval-experiments) | Frozen judge replies, provenance auditing and question-cluster uncertainty on a personally constructed evaluation set. | [Sensitivity report](https://github.com/LUOaini1213/llm-eval-experiments/blob/e20b6e016372e6e63ebe0586d44f609095a85c5f/results/e1/cluster_sensitivity.md) |
-| [Manufacturing Planning Agent](https://github.com/LUOaini1213/manufacturing-planning-agent) | Synthetic capacity allocation and downtime replan. HiGHS solves, SimPy checks, and the agent is not credited with the solver. | [Scenario and reproduction guide](https://github.com/LUOaini1213/manufacturing-planning-agent#readme) |
+| [Manufacturing Planning Agent](https://github.com/LUOaini1213/manufacturing-planning-agent) | Compare from one snapshot, preserve completed work and WIP, then explicitly confirm before advancing. HiGHS solves; SimPy executes. Synthetic example, no factory dispatch. | [Recorded public replay](https://luoaini1213.github.io/manufacturing-planning-agent/) · [Case and actual local solver](https://luoaini1213.github.io/cases/manufacturing.html) |
 | [NAVSIM ability ladder](https://github.com/LUOaini1213/navsim-ability-ladder) | Full-split ablation of what caps open-loop planning, with paired bootstrap intervals. | [Results and reproduction](https://github.com/LUOaini1213/navsim-ability-ladder#readme) |
 | [Counterask](https://github.com/LUOaini1213/counterask-webmcp) | WebMCP tools ask for missing information instead of guessing. Browser interaction needs WebMCP support. | [Live store](https://luoaini1213.github.io/counterask-webmcp/) · [Run locally](RUNNABLE_PROJECTS.md#try-locally) |
 
