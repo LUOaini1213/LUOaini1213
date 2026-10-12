@@ -19,6 +19,16 @@ NUS MSc Civil Engineering (Transport), graduating Jan 2027 · Singapore
 
 ## Selected work
 
+### October 2026 follow-ups
+
+These records supplement the dated project write-ups below.
+
+- **[Glass Box / Track 1](https://github.com/LUOaini1213/track1):** no-key replay and a local collector demo expose accepted, rejected and uncertain OTLP delivery separately from task execution. The [October 9 record](https://github.com/LUOaini1213/track1/blob/7d3b02dab693de2d6b45ced69ac9b4c04eaaab4d/docs/OTLP_DELIVERY.md) covers HTTP 503, timeout and process-crash recovery, plus measured local overhead. The remote-accept/local-checkpoint crash window can still duplicate delivery; this is not a power-loss guarantee or a multi-tenant service.
+- **[fp16x3 Transformer](https://github.com/LUOaini1213/fp16x3-transformer):** two full maintained T4 sessions each pass 234 precision checks; startup/steady gates pass 12/13 and 13/13. A targeted shape-2 repeat passes 2/3. All misses remain visible and balanced stays opt-in. The independent historical 2.875× aggregate predates these cache/recovery changes. [Results, sources and limits](https://github.com/LUOaini1213/fp16x3-transformer/blob/0936d91bc38752aecd9e066287d8f4c47652dee7/README.md#what-the-measurements-support).
+- **[LLM judge experiments](https://github.com/LUOaini1213/llm-eval-experiments):** post-hoc resampling groups 400 items into 188 whole-question clusters. The main comparison's pooled 95% interval is [-0.25, 4.98] percentage points; all 20 cluster intervals across five seeds and two draw counts cross zero. The [fixed report](https://github.com/LUOaini1213/llm-eval-experiments/blob/e20b6e016372e6e63ebe0586d44f609095a85c5f/results/e1/cluster_sensitivity.md) retains the original item-level results, hypothesis tests and recommendations. Endpoint variation is a Monte Carlo diagnostic, not another confidence interval or proof of convergence.
+
+[Commands and prerequisites](RUNNABLE_PROJECTS.md) · [Role-specific evidence navigation](https://luoaini1213.github.io/resumes/).
+
 ### [Civil Buddy](https://github.com/LUOaini1213/civil-buddy) — agentic AI workspace for engineering
 
 `NL → agent routing → deterministic tools → HITL → evaluation`
